@@ -15,4 +15,8 @@
     function Display_Modifer(){
         require_once "views/modifer.php";
     }
+
+    function AddBook(){
+        require_once "views/addBooks.php";
+    }
 ?>

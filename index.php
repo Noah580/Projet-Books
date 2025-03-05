@@ -8,5 +8,7 @@
 
     }else if($Page == "modifer"){
         Display_Modifer();
-    } 
+    }else if ($Page == "AddBooks"){
+        AddBook();
+    }
 ?>

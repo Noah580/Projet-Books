@@ -15,6 +15,14 @@ body{
     background-image: url(../image/background.jpg);
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
 /* Header */
 /* Nav-bar */
 
@@ -66,19 +74,71 @@ body{
 }
 
 /* main */
+/* formulaire */
 
-h2{
+.title .sub-title{
     color: white;
-}
-
-li{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
-    color: white;
-    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-li p{
-    border: 1px solid white;
-    padding: 8px;
-    border-radius: 25px;
+.group{
+    padding: 50px;
+    background-color: white;
+    max-width: auto;
+    height: auto;
+    border-radius: 20px;
+}
+
+.group h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.group form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.group form .gp{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.group form label{
+    color: #333;
+    font-size: 16px;
+}
+
+.group form input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.group form input:focus{
+    border: 1px solid #af960b;
+}
+
+.group form button{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.group form button:hover{
+    background: #af960b;
 }
