@@ -64,16 +64,3 @@ body{
 .navbar a:hover::after {
     width: 100%;
 }
-
-/* Main */
-
-h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 50%;
-    font-size: 40px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-}
