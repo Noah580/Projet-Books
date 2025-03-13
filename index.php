@@ -1,5 +1,5 @@
 <?php
-    require "controller/controller.php";
+     require "controller/controller.php";
 
     if(isset($_GET["Page"])){
         $Page= htmlspecialchars($_GET["Page"]);

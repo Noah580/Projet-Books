@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+    "header",
+    "main",
+    "footer";
+    background-image: url(../image/background.jpg);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header */
+/* Nav-bar */
+
+/* Nouveau style pour la navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    background-color: rgba(25, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    min-width: 600px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 500;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    background: linear-gradient(to right, #ff4444, #ff6b6b);
+    background-size: 200% auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0000, #ff7f7f, #ff0000);
+    z-index: -1;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    background-position: right center;
+}
+
+.navbar a:hover::before {
+    opacity: 1;
+}
+
+.navbar a.active {
+    background: #ff0000;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .navbar {
+        min-width: unset;
+        width: 90%;
+        padding: 15px;
+        gap: 15px;
+        top: 10px;
+    }
+    
+    .navbar a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+/* main */
+/* formulaire */
+
+.title .sub-title{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.group{
+    padding: 50px;
+    background-color: white;
+    max-width: auto;
+    height: auto;
+    border-radius: 20px;
+}
+
+.group h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.group form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.group form .gp{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.group form label{
+    color: #333;
+    font-size: 16px;
+}
+
+.group form input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.group form input:focus{
+    border: 1px solid #af960b;
+}
+
+.group form button{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.group form button:hover{
+    background: #af960b;
+}
