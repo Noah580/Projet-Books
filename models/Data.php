@@ -1,7 +1,7 @@
 <?php
 require "BddConnexion.php";
 
-
+// Récupère tous les livres de la base de données
 function GetBooks()
 {
     $db = ConnectDB();
@@ -12,6 +12,7 @@ function GetBooks()
     }
 }
 
+// Ajoute un nouveau livre dans la base de données
 function AddBooks($name, $author, $year, $summary)
 {
     try {
@@ -36,6 +37,7 @@ function AddBooks($name, $author, $year, $summary)
     }
 }
 
+// Supprime un livre de la base de données par son ID
 function deletes($book_id){
 
     try {

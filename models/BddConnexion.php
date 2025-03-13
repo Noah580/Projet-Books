@@ -1,4 +1,5 @@
 <?php
+// Fonction permetant la connexion a la base de données
 function ConnectDB(){
     try {
         $db = new PDO('mysql:host=localhost;dbname=mvc;charset=utf8', 'root', 'root');

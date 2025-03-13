@@ -15,6 +15,8 @@
         Display_Modifer();
     }else if ($Page == "AddBooks"){
         AddBook();
+    }else{
+        Display_404();
     }
 
 
