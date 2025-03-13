@@ -20,11 +20,21 @@
 
 
     if(isset($_GET["Action"])){
-        $Action =(htmlspecialchars($_GET["Action"]));
+        $Action = htmlspecialchars($_GET["Action"]);
     }else{
         $Action = "";
     }
     if($Action == "AjouterLivre"){
         AddBook();
+    }
+
+ 
+    if(isset($_GET["Action"])){
+        $Action =htmlspecialchars($_GET["Action"]);
+    }else{
+        $Action = "";
+    }
+    if($Action == "SupprimerLivre"){       
+        DeleteBooks();
     }
 ?>

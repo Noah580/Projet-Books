@@ -17,9 +17,6 @@
 
     <main>
         <?php
-
-
-
         $data = GetBooks();
 
         if (empty($data)) {
@@ -29,7 +26,16 @@
 
         echo "<h2>Liste des livre</h2>";
         foreach ($data as $books) {
-            echo "<li><p>{$books['name']}</p></li>";
+        ?>
+
+            <li>
+                <p><?= $books['name'] ?></p>
+                <form action='index.php?Action=SupprimerLivre' method='POST' style='display:inline;'>
+                    <input type='hidden' name='book_id' value='<?= $books['id'] ?>'>
+                    <button type='submit' onclick='return confirm("Voulez-vous vraiment supprimer ce livre ?\")'>❌</button>
+                </form>
+            </li>
+        <?php
         }
         ?>
 

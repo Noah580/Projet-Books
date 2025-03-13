@@ -35,3 +35,23 @@ function AddBooks($name, $author, $year, $summary)
         echo "SQL error" . $e->getMessage();
     }
 }
+
+function deletes($book_id){
+
+    try {
+        $db = ConnectDB();
+        $sql = "DELETE FROM books WHERE id = :id_book";
+    
+        $statement = $db->prepare($sql);
+        
+        $statement->bindParam(':id_book', $book_id, PDO::PARAM_STR);
+        if ($statement->execute()) {
+            header("Location: index.php?Page=books");
+            exit();
+        } else {
+            echo " Livre introuvable❌";
+        }
+    } catch (PDOException $e) {
+       echo "SQL error" . $e->getMessage();
+    }
+}

@@ -1,6 +1,5 @@
 <?php
 require "models/Data.php";
-
     function Display_books(){
         require_once "views/books.php";
     }
@@ -27,5 +26,14 @@ require "models/Data.php";
         }
 
         require_once "views/addBooks.php";
+    }
+
+    function DeleteBooks(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            if(isset($_POST["book_id"])){
+                $book_id = htmlspecialchars($_POST['book_id']);
+                deletes($book_id);
+            }
+        }
     }
 ?>
