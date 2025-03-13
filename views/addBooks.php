@@ -1,9 +1,3 @@
-<?php
-    require "models/Data.php";
-    AddBooks();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +21,7 @@
         </div>
         <div class="group">
             <h1>Formulaire d'ajout</h1>
-            <form action="views/books.php" method="POST">
+            <form action="index.php?Action=AjouterLivre" method="POST">
                 <div class="gp name">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>

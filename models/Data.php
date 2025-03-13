@@ -12,30 +12,21 @@ function GetBooks()
     }
 }
 
-function AddBooks()
+function AddBooks($name, $author, $year, $summary)
 {
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = isset($_POST["name"]);
-        $author = isset($_POST["author"]);
-        $year = isset($_POST["year"]);
-        $summary = isset($_POST["summary"]);
-    }
-
     try {
-
         $db = ConnectDB();
         $sql = "INSERT INTO books (name, author, year, summary) Values (:name, :author, :year, :summary)";
         $statement = $db->prepare($sql);
 
 
-        $statement->bindParam(':name', $name);
-        $statement->bindParam(':author', $author);
+        $statement->bindParam(':name', $name, PDO::PARAM_STR);
+        $statement->bindParam(':author', $author, PDO::PARAM_STR);
         $statement->bindParam(':year', $year, PDO::PARAM_INT);
-        $statement->bindParam(':summary', $summary);
+        $statement->bindParam(':summary', $summary, PDO::PARAM_STR);
 
         if ($statement->execute()) {
-            header("Location: books.php");
+            header("Location: index.php?Page=books");
             exit();
         } else {
             echo " ❌Pas d'ajout de livre";

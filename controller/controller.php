@@ -1,4 +1,5 @@
 <?php
+require "models/Data.php";
 
     function Display_books(){
         require_once "views/books.php";
@@ -17,6 +18,14 @@
     }
 
     function AddBook(){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = isset($_POST['name']) ? $_POST['name'] : null;
+            $author = isset($_POST['author']) ? $_POST['author'] : null;
+            $year = isset($_POST['year']) ? $_POST['year'] : null;
+            $summary = isset($_POST['summary']) ? $_POST['summary'] : null;
+            AddBooks($name, $author, $year, $summary);
+        }
+
         require_once "views/addBooks.php";
     }
 ?>
